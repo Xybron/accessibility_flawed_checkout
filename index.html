@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Page - Accessibility Demo</title>
+ <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <h1>Checkout Page - Accessibility Demo</h1>
+  </header>
+
+  <div class="container">
+    <h2>Complete Your Purchase</h2>
+    <form id="checkout-form">
+      <!-- Email Field -->
+      <input type="text" placeholder="Enter email here"> <!-- Unlabeled field -->
+      <span class="error-message" id="email-error">Invalid.</span> <!-- Unclear error message -->
+
+      <!-- Shipping Method -->
+      <label for="shipping">Shipping:</label>
+      <select id="shipping">
+        <option value="">Select shipping method</option> <!-- Missing proper option labels -->
+        <option value="standard">Standard (5-7 days)</option>
+        <option value="express">Express (2-3 days)</option>
+      </select>
+
+      <!-- Payment Method -->
+      <div>
+        <p>Payment Method:</p> <!-- Improper semantic structure -->
+        <input type="radio" name="payment" id="credit" value="credit">
+        <label for="credit">Credit Card</label>
+        <input type="radio" name="payment" id="paypal" value="paypal">
+        <label for="paypal">PayPal</label>
+      </div>
+
+      <!-- Terms and Conditions -->
+      <div>
+        <input type="checkbox" id="terms"> <!-- No label -->
+        <span>I agree to the terms and conditions.</span>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Place Order</button> <!-- Low contrast -->
+
+      <!-- Hidden Skip Link -->
+      <a href="#main-content" class="skip-link">Skip to Content</a> <!-- Not visible -->
+      <main id="main-content">
+        <!-- Main content -->
+      </main>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 Accessible Checkout Demo
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
